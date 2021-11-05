@@ -19,7 +19,7 @@ echo -n "Total Space ext4: "
 df -h -t ext4
 
 echo -n "Current IP Address: "
-hostname -i
+hostname -I
 echo -n "Subnet Mask: "
-ifconfig | grep netmask
+ifconfig | cut -c 25-45 | grep netmask
 
