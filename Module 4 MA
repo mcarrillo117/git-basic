@@ -1,1 +1,25 @@
+#!bin/bash
+#System Information
+
+echo -n "Current User @ Hostname: "
+hostnamectl | grep Static
+
+echo -n "CPU Model: "
+lscpu | grep Model
+
+echo -n "Free/Total Memory: "
+cat /proc/meminfo | grep MemFree
+cat /proc/meminfo | grep MemTotal
+
+echo -n "Free/Total Swap Space: "
+grep SwapFree /proc/meminfo
+grep SwapTotal /proc/meminfo
+
+echo -n "Total Space ext4: "
+df -h -t ext4
+
+echo -n "Current IP Address: "
+hostname -i
+echo -n "Subnet Mask: "
+ifconfig | grep netmask
 
